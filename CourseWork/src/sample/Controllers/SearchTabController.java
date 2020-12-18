@@ -39,6 +39,10 @@ public class SearchTabController {
     @FXML
     private Label arrearsCloseDateLabel;
     @FXML
+    private Label itemNameLabel;
+    @FXML
+    private Label itemSumLabel;
+    @FXML
     private Label arrearsStatusLabel;
 
     public void initialize() throws IOException {
@@ -59,18 +63,22 @@ public class SearchTabController {
         );
     }
 
-    private void showArrearsDetails(Arrears product){
-        if (product != null) {
-            arrearsIDLabel.setText(product.getId());
-            arrearsSumLabel.setText(product.getSum());
-            arrearsCloseDateLabel.setText(product.getCloseDate());
-            arrearsOpenDateLabel.setText(product.getOpenDate());
-            arrearsStatusLabel.setText(product.getStatus());
+    private void showArrearsDetails(Arrears arrears){
+        if (arrears != null) {
+            arrearsIDLabel.setText(arrears.getId());
+            arrearsSumLabel.setText(arrears.getSum());
+            arrearsCloseDateLabel.setText(arrears.getCloseDate());
+            arrearsOpenDateLabel.setText(arrears.getOpenDate());
+            itemNameLabel.setText(arrears.getItemName());
+            itemSumLabel.setText(arrears.getItemSum());
+            arrearsStatusLabel.setText(arrears.getStatus());
         }
         else {
             arrearsIDLabel.setText("");
             arrearsSumLabel.setText("");
             arrearsCloseDateLabel.setText("");
+            itemNameLabel.setText("");
+            itemSumLabel.setText("");
             arrearsOpenDateLabel.setText("");
         }
     }
@@ -82,7 +90,7 @@ public class SearchTabController {
         String line;
         while( (line = br.readLine())!= null ){
             String [] tokens = line.split(" ");
-            Arrears arrears = new Arrears(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],tokens[5],tokens[6],tokens[7],tokens[8]);
+            Arrears arrears = new Arrears(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],tokens[5],tokens[6],tokens[7],tokens[8],tokens[9],tokens[10]);
             if (arrears.getUserLogin().equals(Main.activeUser.getLogin())) arrearsData.add(arrears);
         }
     }

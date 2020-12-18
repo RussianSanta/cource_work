@@ -25,6 +25,10 @@ public class ArrearsRewriteController {
     @FXML
     private TextField closeDateInput;
     @FXML
+    private TextField itemNameInput;
+    @FXML
+    private TextField itemSumInput;
+    @FXML
     private ComboBox<String> statusInput;
 
     private Stage dialogStage;
@@ -51,6 +55,8 @@ public class ArrearsRewriteController {
         sumInput.setText(arrears.getSum());
         openDateInput.setText(arrears.getOpenDate());
         closeDateInput.setText(arrears.getCloseDate());
+        itemNameInput.setText(arrears.getItemName());
+        itemSumInput.setText(arrears.getItemSum());
         statusInput.getSelectionModel().select(arrears.getStatus());
     }
 
@@ -84,6 +90,14 @@ public class ArrearsRewriteController {
             isValid = false;
             closeDateInput.setStyle("-fx-border-color: red");
         }
+        if (itemNameInput.getText() == null || itemNameInput.getText().length() == 0) {
+            isValid = false;
+            itemNameInput.setStyle("-fx-border-color: red");
+        }
+        if (itemSumInput.getText() == null || itemSumInput.getText().length() == 0) {
+            isValid = false;
+            itemSumInput.setStyle("-fx-border-color: red");
+        }
         return isValid;
     }
 
@@ -99,6 +113,8 @@ public class ArrearsRewriteController {
             arrears.setOpenDate(openDateInput.getText());
             arrears.setCloseDate(closeDateInput.getText());
             arrears.setSum(sumInput.getText());
+            arrears.setItemName(itemNameInput.getText());
+            arrears.setItemSum(itemSumInput.getText());
             arrears.setStatus(statusInput.getSelectionModel().getSelectedItem());
 
             arrears.addArrears();

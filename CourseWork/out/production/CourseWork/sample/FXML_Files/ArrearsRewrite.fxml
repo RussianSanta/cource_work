@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="mainPane" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ArrearsRewriteController">
+<AnchorPane fx:id="mainPane" prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ArrearsRewriteController">
    <children>
       <GridPane layoutX="20.0" layoutY="24.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="24.0">
         <columnConstraints>
@@ -15,6 +15,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -30,10 +32,14 @@
             <TextField fx:id="openDateInput" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="Дата закрытия" GridPane.rowIndex="4" />
             <Label text="Сумма долга" GridPane.rowIndex="5" />
-            <Label text="Статус" GridPane.rowIndex="6" />
+            <Label text="Статус" GridPane.rowIndex="8" />
             <TextField fx:id="closeDateInput" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="sumInput" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ComboBox fx:id="statusInput" prefHeight="25.0" prefWidth="184.0" promptText="Статус" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ComboBox fx:id="statusInput" prefHeight="25.0" prefWidth="184.0" promptText="Статус" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Название залога" GridPane.rowIndex="6" />
+            <Label text="Стоимость залога" GridPane.rowIndex="7" />
+            <TextField fx:id="itemNameInput" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="itemSumInput" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
       </GridPane>
       <HBox layoutX="125.0" layoutY="261.0" spacing="30.0" AnchorPane.bottomAnchor="14.0">

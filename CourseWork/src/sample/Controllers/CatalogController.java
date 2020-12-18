@@ -53,6 +53,10 @@ public class CatalogController {
     @FXML
     private Label arrearsCloseDateLabel;
     @FXML
+    private Label itemNameLabel;
+    @FXML
+    private Label itemSumLabel;
+    @FXML
     private Label arrearsStatusLabel;
 
     public void initialize() throws IOException {
@@ -87,6 +91,8 @@ public class CatalogController {
             arrearsSumLabel.setText(arrears.getSum());
             arrearsCloseDateLabel.setText(arrears.getCloseDate());
             arrearsOpenDateLabel.setText(arrears.getOpenDate());
+            itemNameLabel.setText(arrears.getItemName());
+            itemSumLabel.setText(arrears.getItemSum());
             arrearsStatusLabel.setText(arrears.getStatus());
         }
         else {
@@ -96,6 +102,8 @@ public class CatalogController {
             patronymicLabel.setText("");
             arrearsSumLabel.setText("");
             arrearsCloseDateLabel.setText("");
+            itemNameLabel.setText("");
+            itemSumLabel.setText("");
             arrearsOpenDateLabel.setText("");
         }
     }
@@ -107,7 +115,7 @@ public class CatalogController {
         String line;
         while( (line = br.readLine())!= null ){
             String [] tokens = line.split(" ");
-            Arrears arrears = new Arrears(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],tokens[5],tokens[6],tokens[7],tokens[8]);
+            Arrears arrears = new Arrears(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],tokens[5],tokens[6],tokens[7],tokens[8],tokens[9],tokens[10]);
             arrearsData.add(arrears);
         }
     }
@@ -160,7 +168,7 @@ public class CatalogController {
         for (Arrears arrears: arrearsData) {
             filePrintStream.println(arrears.getId() + " " + arrears.getUserLogin() + " " + arrears.getSurname() + " "
             + arrears.getName() + " " + arrears.getPatronymic() + " " + arrears.getOpenDate() + " "
-                    + arrears.getCloseDate() + " " + arrears.getSum() + " " + arrears.getStatus());
+                    + arrears.getCloseDate() + " " + arrears.getSum() + " " + arrears.getItemName() + " " + arrears.getItemSum() + " " + arrears.getStatus());
         }
     }
 

@@ -14,6 +14,8 @@ public class Arrears {
     private String openDate;
     private String closeDate;
     private String sum;
+    private String itemName;
+    private String itemSum;
     private String status;
 
     public Arrears() {
@@ -22,7 +24,8 @@ public class Arrears {
         this.patronymic = "";
     }
 
-    public Arrears(String id, String userLogin, String surname, String name, String patronymic, String openDate, String closeDate, String sum, String status) {
+    public Arrears(String id, String userLogin, String surname, String name, String patronymic,
+                   String openDate, String closeDate, String sum, String itemName, String itemSum, String status) {
         this.id = id;
         this.userLogin = userLogin;
         this.surname = surname;
@@ -31,6 +34,8 @@ public class Arrears {
         this.openDate = openDate;
         this.closeDate = closeDate;
         this.sum = sum;
+        this.itemName = itemName;
+        this.itemSum = itemSum;
         this.status = status;
     }
 
@@ -39,7 +44,8 @@ public class Arrears {
         PrintStream filePrintStream = new PrintStream(new FileOutputStream(productsFile, true));
         filePrintStream.println(this.getId() + " " + this.getUserLogin() + " " + this.getSurname() + " "
                 + this.getName() + " " + this.getPatronymic() + " " + this.getOpenDate() + " "
-                + this.getCloseDate() + " " + this.getSum() + " " + this.getStatus());
+                + this.getCloseDate() + " " + this.getSum() + " " + this.getItemName() + " " + this.getItemSum() +
+                " " + this.getStatus());
     }
 
     public String getId() {
@@ -72,6 +78,14 @@ public class Arrears {
 
     public String getSum() {
         return sum;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public String getItemSum() {
+        return itemSum;
     }
 
     public String getStatus() {
@@ -108,6 +122,14 @@ public class Arrears {
 
     public void setSum(String sum) {
         this.sum = sum;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public void setItemSum(String itemSum) {
+        this.itemSum = itemSum;
     }
 
     public void setStatus(String status) {
